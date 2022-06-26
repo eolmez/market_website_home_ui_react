@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { H2, H3 } from "../../globalStyles";
-import Card from "../Card/Card";
+import Card from "../card/Card";
 import {
   CardOne,
   CarTwo,
@@ -8,7 +8,7 @@ import {
   CardFour,
   CardFive,
   CardSix,
-} from "../Card/CardData";
+} from "../card/CardData";
 import { ProductCards, ProductHeader, ProductWrapper } from "./ProductsStyles";
 const Products = () => {
   const data = { CardOne, CarTwo, CardThree, CardFour, CardFive, CardSix };
