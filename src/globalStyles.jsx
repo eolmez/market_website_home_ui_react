@@ -2,9 +2,11 @@ import styled, { createGlobalStyle, css } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   *{
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
   }
 `;
 
