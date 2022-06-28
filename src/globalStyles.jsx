@@ -7,11 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap');
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    
-  }
+  
 `;
 
 export const Button = styled.button`
