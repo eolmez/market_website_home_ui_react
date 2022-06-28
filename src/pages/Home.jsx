@@ -1,6 +1,6 @@
-import Hero from "../components/hero/Hero";
-import Products from "../components/products/Products";
-import Reviews from "../components/reviews/Reviews";
+import Hero from "../components/Hero/Hero";
+import Products from "../components/Products/Products";
+import Reviews from "../components/Reviews/Reviews";
 
 const Home = () => {
   return (
