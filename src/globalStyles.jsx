@@ -1,14 +1,4 @@
-import styled, { createGlobalStyle, css } from "styled-components";
-
-export const GlobalStyle = createGlobalStyle`
-  *{    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  
-`;
+import styled, { css } from "styled-components";
 
 export const Button = styled.button`
   display: flex;
