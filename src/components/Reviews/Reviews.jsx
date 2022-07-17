@@ -15,7 +15,7 @@ const Reviews = () => {
         <Card>
           <CardHeader>
             <CustomerImg />
-            <PText name>Sevgi Yılmaz</PText>
+            <PText autohor>Sevgi Yılmaz</PText>
           </CardHeader>
           <PText review>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
@@ -27,7 +27,7 @@ const Reviews = () => {
         <Card>
           <CardHeader>
             <CustomerImg />
-            <PText name>Sevgi Yılmaz</PText>
+            <PText author>Sevgi Yılmaz</PText>
           </CardHeader>
           <PText review>
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
@@ -39,7 +39,7 @@ const Reviews = () => {
         <Card>
           <CardHeader>
             <CustomerImg />
-            <PText name>Sevgi Yılmaz</PText>
+            <PText author>Sevgi Yılmaz</PText>
           </CardHeader>
           <PText review>
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus

@@ -1,28 +1,19 @@
-import { useState } from "react";
 import { H2, H3 } from "../../globalStyles";
 import Card from "../Card/Card";
-import {
-  CardOne,
-  CarTwo,
-  CardThree,
-  CardFour,
-  CardFive,
-  CardSix,
-} from "../Card/CardData";
 import { ProductCards, ProductHeader, ProductWrapper } from "./ProductsStyles";
-const Products = () => {
-  const data = { CardOne, CarTwo, CardThree, CardFour, CardFive, CardSix };
-  const [count, setCount] = useState(0);
+import { AppContext } from "../../App";
+import { useContext } from "react";
 
-  const counter = (e) => {
-    if (e.target.value === "+") {
-      setCount((count) => count + 1);
-    } else if (count === 0 && e.target.value === "-") {
-      setCount(count === 0);
-    } else if (e.target.value === "-") {
-      setCount((count) => count - 1);
-    }
+const Products = () => {
+  const context = useContext(AppContext);
+
+  const addHandleToCart = (product) => {
+    context.addToCart(product);
   };
+
+  const favoriteProducts =
+    JSON.parse(localStorage.getItem("favoritesProducts")) || [];
+
   return (
     <ProductWrapper>
       <ProductHeader>
@@ -30,21 +21,22 @@ const Products = () => {
         <H3 green>Tümünü gör</H3>
       </ProductHeader>
       <ProductCards>
-        {Object.keys(data).map((key) => {
-          const card = data[key];
-          return (
-            <Card
-              id={card.id}
-              image={card.image}
-              description={card.description}
-              amount={card.amount}
-              price={card.price}
-              discountPrice={card.discountPrice}
-              counter={counter}
-              count={count}
-            />
-          );
-        })}
+        {context.productList.map((product) => (
+          <Card
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            description={product.description}
+            amount={product.amount}
+            price={product.price}
+            discountPrice={product.discountPrice}
+            isFavorite={favoriteProducts.includes(product.id)}
+            favoriteProducts={favoriteProducts}
+            product={product}
+            addHandleToCart={addHandleToCart}
+            count={product.count}
+          />
+        ))}
       </ProductCards>
     </ProductWrapper>
   );

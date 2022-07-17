@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ReviewsWrapper = styled.div`
   background: #f1fff4;
-  width: 65%;
+  width: 1200px;
   height: 50rem;
   display: flex;
   flex-direction: column;

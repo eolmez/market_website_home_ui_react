@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import { AppContext } from "../../App";
+import { AiOutlineSearch } from "react-icons/ai";
+import Button from "../Button/Button";
 import {
   Nav,
   NavbarContainer,
@@ -5,7 +9,7 @@ import {
   TopWrapper,
   NavBottom,
   NavLogo,
-  NavIcon,
+  InputArea,
   NavInput,
   Basket,
   Counter,
@@ -13,25 +17,43 @@ import {
   NavMenu,
   NavItem,
   BottomWrapper,
+  IconLink,
+  Buttons,
+  TopMid,
 } from "./NavbarStyles";
-import {Button} from "../../globalStyles"
+
 const Navbar = () => {
+  const context = useContext(AppContext);
+
+  const totalCartAmount = context.cart
+    .reduce((total, item) => (total += item.count * item.price), 0)
+    .toFixed(2);
   return (
     <Nav>
       <NavbarContainer>
         <NavTop>
           <TopWrapper>
-            <NavLogo to="/">
-              <NavIcon />
-              fresh
-            </NavLogo>
-            <NavInput placeholder="Arama" />
-            <Basket>
-              <Counter><p>Sepetim - </p>0.00</Counter>
-              <CartIcon />
+            <NavLogo to="/">fresh</NavLogo>
+            <TopMid>
+              <InputArea>
+                <AiOutlineSearch></AiOutlineSearch>
+                <NavInput type="search" placeholder="Arama" />
+              </InputArea>
+
+              <Basket>
+                <Counter>
+                  <p>Sepetim - </p>
+                  {totalCartAmount}
+                </Counter>
+                <IconLink to="/cart">
+                  <CartIcon />
+                </IconLink>
+              </Basket>
+            </TopMid>
+            <Buttons>
               <Button navGreen>Üye ol</Button>
               <Button navWhite> Giriş Yap</Button>
-            </Basket>
+            </Buttons>
           </TopWrapper>
         </NavTop>
         <NavBottom>

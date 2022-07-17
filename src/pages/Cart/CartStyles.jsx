@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ProductWrapper = styled.div`
+export const CartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +13,7 @@ export const ProductWrapper = styled.div`
   }
 `;
 
-export const ProductHeader = styled.div`
+export const CartHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -26,7 +26,7 @@ export const ProductHeader = styled.div`
     color: #92b54c;
   }
 `;
-export const ProductCards = styled.div`
+export const CartCards = styled.div`
   margin-top: 1rem;
   width: 100%;
   display: grid;

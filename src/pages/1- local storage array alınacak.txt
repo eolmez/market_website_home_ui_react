@@ -1,0 +1,8 @@
+1- local storage array alınacak
+2- bu arrray'a bizim id eklenecek
+3- local storage geri gönderilecek
+4- mutate konusuna bak
+5-local storage arary alınacak
+6-id remove edilecek
+7-local storage geri gidecek
+8-counter hover css ile yapılacak

@@ -13,12 +13,15 @@ export const FooterWrapper = styled.footer`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 `;
 
 export const ContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  width: 65%;
+  justify-content: space-around;
+  width: 1250px;
   margin-top: 3rem;
 `;
 
@@ -53,8 +56,8 @@ export const Communication = styled.section``;
 
 export const Line = styled.hr`
   margin-top: 5rem;
-  width: 65%;
-  border-top: 5px solid gray;
+  width: 1200px;
+  border-top: 3px solid #848482;
   border-radius: 5px;
 `;
 
@@ -62,5 +65,5 @@ export const Rights = styled.small`
   margin-top: 3rem;
   margin-bottom: 3rem;
   font-size: 15px;
-  color: gray;
+  color: #848482;
 `;

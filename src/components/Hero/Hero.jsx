@@ -1,4 +1,5 @@
-import { Button, H1, H3, PText } from "../../globalStyles";
+import Button from "../Button/Button";
+import { H1, H3, PText } from "../../globalStyles";
 import {
   Card,
   Card1Logo,
@@ -16,7 +17,7 @@ import { IconContext } from "react-icons";
 
 const Hero = () => {
   return (
-    <IconContext.Provider value={{ size: "100px"}}>
+    <IconContext.Provider value={{ size: "100px" }}>
       <HeroWrapper>
         <HeroTop>
           <TopLeft>
@@ -31,7 +32,7 @@ const Hero = () => {
           </TopRight>
         </HeroTop>
         <HeroBottom>
-          <Card>
+          <Card first>
             <H3 green>Neden Biz?</H3>
             <Card1Logo />
             <H3>%100 DOĞAL</H3>
@@ -44,7 +45,7 @@ const Hero = () => {
             <Card2Logo />
             <H3>%100 DOĞAL</H3>
             <PText>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </PText>
           </Card>
           <PText dot>. . .</PText>

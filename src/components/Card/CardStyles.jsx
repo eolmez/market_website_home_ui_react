@@ -6,10 +6,10 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 20rem;
-  height: 25rem;
+  width: 375px;
+  height: 35rem;
   border-radius: 50px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 `;
 
 export const CardTop = styled.div`
@@ -19,30 +19,12 @@ export const CardTop = styled.div`
 `;
 
 export const CardImg = styled.img`
-  width: 150px;
-  height: 150px;
-  margin-right: 30px;
-`;
-
-export const Counter = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-self: stretch;
-  justify-self: flex-end;
-  margin-right: -70px;
-`;
-
-export const Count = styled.span`
-  background: #61b15a;
-  color: white;
-  box-shadow: 2px 0 0 0 rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
+  width: 200px;
+  height: 200px;
 `;
 
 export const CardMiddle = styled.div`
+  margin-top: 40px;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -66,6 +48,7 @@ export const RedFavoriteBtn = styled(AiFillHeart)`
 `;
 
 export const CardBottom = styled.div`
+  margin-top: 30px;
   display: flex;
   align-self: flex-start;
   margin-left: 1rem;

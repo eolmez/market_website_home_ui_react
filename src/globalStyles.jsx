@@ -1,76 +1,36 @@
-import styled, { css } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 
-export const Button = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent;
-  border: 2px solid #61b15a;
-  border-radius: 15px;
-  width: 150px;
-  height: 40px;
-  font-weight: 700;
-  font-size: 15px;
-  cursor: pointer;
+const GlobalStyle = createGlobalStyle`
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
 
-  ${(props) =>
-    props.navGreen &&
-    css`
-      background: #61b15a;
-      color: white;
-      height: 40px;
-      border: none;
-      margin-right: 10px;
-      margin-left: 100px;
-    `}
-  ${(props) =>
-    props.heroBtn &&
-    css`
-      background: #61b15a;
-      color: white;
-      width: 170px;
-      border: none;
-      margin-top: 1rem;
-    `}
-
-  ${(props) =>
-    props.plus &&
-    css`
-      width: 30px;
-      height: 30px;
-      font-size: 1.5rem;
-      color: #61b15a;
-      border: none;
-      border-radius: 30px 30px 0 0;
-      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    `}
-
-    ${(props) =>
-    props.minus &&
-    css`
-      width: 30px;
-      height: 30px;
-      font-size: 1.5rem;
-      color: #61b15a;
-      border: none;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    `}
-    ${(props) =>
-    props.cardBtn &&
-    css`
-      background: #61b15a;
-      color: white;
-      width: 170px;
-      border: none;
-      width: 80%;
-      margin-top: 2rem;
-    `}
+`;
+export const Container = styled.div`
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+  @media screen and (max-width: 991px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 `;
 
 export const H1 = styled.h1`
   font-size: 4rem;
   font-weight: 700;
+  ${(props) =>
+    props.green &&
+    css`
+      color: #61b15a;
+    `}
 `;
 export const H2 = styled.h2`
   font-size: 30px;
@@ -84,7 +44,7 @@ export const H2 = styled.h2`
       margin-bottom: 2rem;
     `}
 `;
-export const H3 = styled.div`
+export const H3 = styled.h3`
   font-size: 20px;
   font-weight: 500;
   ${(props) =>
@@ -95,7 +55,7 @@ export const H3 = styled.div`
       text-underline-offset: 10px;
     `}
 `;
-export const PText = styled.div`
+export const PText = styled.p`
   font-size: 1.4rem;
   font-weight: 500;
 
@@ -138,7 +98,7 @@ export const PText = styled.div`
     `}
 
     ${(props) =>
-    props.name &&
+    props.author &&
     css`
       font-weight: 600;
     `}
@@ -160,3 +120,5 @@ export const PText = styled.div`
       font-weight: 600;
     `}
 `;
+
+export default GlobalStyle;
