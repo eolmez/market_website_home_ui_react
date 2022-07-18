@@ -6,3 +6,16 @@
 6-id remove edilecek
 7-local storage geri gidecek
 8-counter hover css ile yapılacak
+
+
+
+
+-değişken, state, klasör, component isimleri açıklayıcı ve düzgün olacak
+-sepete ekle ve counter birleştirilecek
+-context ayrı dosya olarak yaz
+-kullanılmayan prop, değişken vs. temizlenecek
+-responsive yapılacak******
+
+-jira kullanımı
+-gitflow
+-code review
