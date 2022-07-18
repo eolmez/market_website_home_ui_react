@@ -5,12 +5,19 @@ import { Count, CounterButton } from "./CounterStyles";
 
 const Counter = ({ id, count }) => {
   const context = useContext(AppContext);
-  const { increaseCount, decreaseCount } = context;
-  console.log("count", count);
+  const { increaseCount, decreaseCount, addToCart } = context;
+
+  
 
   return (
     <CounterButton>
-      <Button plus value="+" onClick={() => increaseCount(id)}>
+      <Button plus value="+" onClick={() => {
+        if (count === 0) {
+          addToCart(id)
+        } else {
+          increaseCount(id)
+        }
+      }}>
         +
       </Button>
       <Count>{count}</Count>

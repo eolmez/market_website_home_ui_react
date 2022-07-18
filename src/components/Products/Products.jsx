@@ -3,6 +3,7 @@ import Card from "../Card/Card";
 import { ProductCards, ProductHeader, ProductWrapper } from "./ProductsStyles";
 import { AppContext } from "../../App";
 import { useContext } from "react";
+import ProductsData from "../../data/ProductsData";
 
 const Products = () => {
   const context = useContext(AppContext);
@@ -14,6 +15,16 @@ const Products = () => {
   const favoriteProducts =
     JSON.parse(localStorage.getItem("favoritesProducts")) || [];
 
+  const findCount = (id) => {
+    const productInCart = context.cart.find((cartItem) => {
+      return cartItem.id === id
+    });
+    
+    const count = productInCart ?  productInCart.count : 0;
+    return count;
+  };
+
+
   return (
     <ProductWrapper>
       <ProductHeader>
@@ -21,7 +32,7 @@ const Products = () => {
         <H3 green>Tümünü gör</H3>
       </ProductHeader>
       <ProductCards>
-        {context.productList.map((product) => (
+        {ProductsData.map((product) => (
           <Card
             key={product.id}
             id={product.id}
@@ -34,7 +45,7 @@ const Products = () => {
             favoriteProducts={favoriteProducts}
             product={product}
             addHandleToCart={addHandleToCart}
-            count={product.count}
+            count={findCount(product.id)}
           />
         ))}
       </ProductCards>

@@ -27,9 +27,6 @@ const Card = ({
   isFavorite,
   favoriteProducts,
   product,
-  addHandleToCart,
-  increaseCount,
-  decreaseCount,
   count,
   isCart,
   handleRemoveFromCart,
@@ -37,6 +34,8 @@ const Card = ({
   const context = useContext(AppContext);
   const [like, setLike] = useState(isFavorite);
   const [isHovering, setIsHovering] = useState(false);
+
+  const { addToCart } = context;
 
   const addFavorites = () => {
     setLike(true);
@@ -78,12 +77,7 @@ const Card = ({
         <CardTop>
           <CardImg src={image}></CardImg>
 
-          <Counter
-            id={id}
-            count={count}
-            increaseCount={increaseCount}
-            decreaseCount={decreaseCount}
-          />
+          <Counter id={id} count={count} />
         </CardTop>
         <CardMiddle>
           <CardText>
@@ -109,7 +103,7 @@ const Card = ({
             Sepetten Çıkar
           </Button>
         ) : (
-          <Button cardBtn onClick={() => addHandleToCart(product)}>
+          <Button cardBtn onClick={() => addToCart(id)}>
             Sepete Ekle
           </Button>
         )}
